@@ -4,13 +4,21 @@
  <title>My Musings</title>
  <link href="http://.github.com/Blog/atom.xml" rel="self"/>
  <link href="http://.github.com/Blog/"/>
- <updated>2009-10-13T03:22:22-07:00</updated>
+ <updated>2009-10-13T03:44:36-07:00</updated>
  <id>http://.github.com/Blog/</id>
  <author>
    <name>Dr Nic Williams</name>
    <email>williams@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Ruby's splat operator</title>
+   <link href="http://.github.com/Blog/2009/10/13/rubys-splat-operator.html"/>
+   <updated>2009-10-13T00:00:00-07:00</updated>
+   <id>http://.github.com/Blog/2009/10/13/rubys-splat-operator</id>
+   <content type="html">&lt;p&gt;Oh look, this page is about ruby&amp;#8217;s splat operator, &amp;#8216;*&amp;#8217;.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Welcome to 'My Musings'</title>
