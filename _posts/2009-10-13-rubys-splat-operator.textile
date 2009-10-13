@@ -1,0 +1,6 @@
+---
+layout: post
+title: Ruby's splat operator
+---
+
+Oh look, this page is about ruby's splat operator, '*'.
