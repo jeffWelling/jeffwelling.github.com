@@ -5,8 +5,8 @@ title: Ruby's splat operator
 
 So I've begun maintaining a fork of "Ticgit":http://wiki.github.com/schacon/ticgit and I was reading the source code the other day for fun and I came across an expression that I'd never seen before in ruby code.  The section that I came across was
 
-@commit_log   = `git log -1`.chomp
-m, commit_id = * commit_log.match(/commit\W*([A-Fa-f0-9]+)/)@
+@commit_log   = `git log -1`.chomp@
+@m, commit_id = * commit_log.match(/commit\W*([A-Fa-f0-9]+)/)@
 
 And the part specifically that confused me, was the _= *_ part.  I'd never seen an asterisk used right after an equals sign like that, it completely caught me off guard; Off to the #ruby IRC channel I was! It turns out, that _*_ is called the *splat operator* in ruby. After a couple minutes asking around and some playtime in irb, I worked out what it did.  In the situation it was used in in ticgit, the result of *commit_log.match(/.../)* was
 
