@@ -4,7 +4,7 @@
  <title>My Musings</title>
  <link href="http://.github.com/Blog/atom.xml" rel="self"/>
  <link href="http://.github.com/Blog/"/>
- <updated>2009-10-13T03:03:26-07:00</updated>
+ <updated>2009-10-13T03:19:42-07:00</updated>
  <id>http://.github.com/Blog/</id>
  <author>
    <name>Dr Nic Williams</name>
@@ -18,6 +18,14 @@
    <updated>2009-10-13T00:00:00-07:00</updated>
    <id>http://.github.com/Blog/2009/10/13/first-post</id>
    <content type="html">&lt;p&gt;My Musings is going to be an awesome blog of awesomeness and doom. BRAINWORMS!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Welcome to 'My Musings'</title>
+   <link href="http://.github.com/Blog/2009/10/13/cool.html"/>
+   <updated>2009-10-13T00:00:00-07:00</updated>
+   <id>http://.github.com/Blog/2009/10/13/cool</id>
+   <content type="html">&lt;p&gt;Neat, my second blog post ever. Loving the Disqus comments, even if they haven&amp;#8217;t really been used yet. Still kind of testing things out.&lt;/p&gt;</content>
  </entry>
  
  
