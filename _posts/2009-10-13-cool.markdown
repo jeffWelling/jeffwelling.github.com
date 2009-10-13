@@ -1,7 +1,7 @@
 
 ---
 layout: post
-title: Welcome to 'My Musings'
+title: Second post ever
 ---
 
 Neat, my second blog post ever.

@@ -4,7 +4,7 @@
  <title>My Musings</title>
  <link href="http://.github.com/Blog/atom.xml" rel="self"/>
  <link href="http://.github.com/Blog/"/>
- <updated>2009-10-13T03:19:42-07:00</updated>
+ <updated>2009-10-13T03:22:22-07:00</updated>
  <id>http://.github.com/Blog/</id>
  <author>
    <name>Dr Nic Williams</name>
@@ -21,7 +21,7 @@
  </entry>
  
  <entry>
-   <title>Welcome to 'My Musings'</title>
+   <title>Second post ever</title>
    <link href="http://.github.com/Blog/2009/10/13/cool.html"/>
    <updated>2009-10-13T00:00:00-07:00</updated>
    <id>http://.github.com/Blog/2009/10/13/cool</id>
