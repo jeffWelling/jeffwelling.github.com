@@ -4,7 +4,7 @@
  <title>My Musings</title>
  <link href="http://.github.com/Blog/atom.xml" rel="self"/>
  <link href="http://.github.com/Blog/"/>
- <updated>2009-10-13T03:44:36-07:00</updated>
+ <updated>2009-10-13T04:13:07-07:00</updated>
  <id>http://.github.com/Blog/</id>
  <author>
    <name>Dr Nic Williams</name>
@@ -17,7 +17,13 @@
    <link href="http://.github.com/Blog/2009/10/13/rubys-splat-operator.html"/>
    <updated>2009-10-13T00:00:00-07:00</updated>
    <id>http://.github.com/Blog/2009/10/13/rubys-splat-operator</id>
-   <content type="html">&lt;p&gt;Oh look, this page is about ruby&amp;#8217;s splat operator, &amp;#8216;*&amp;#8217;.&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;So I&amp;#8217;ve begun maintaining a fork of &lt;a href=&quot;http://wiki.github.com/schacon/ticgit&quot;&gt;Ticgit&lt;/a&gt; and I was reading the source code the other day for fun and I came across an expression that I&amp;#8217;d never seen before in ruby code.  The section that I came across was&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;commit_log   = `git log -1`.chomp
+m, commit_id = * commit_log.match(/commit\W*([A-Fa-f0-9]+)/)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And the part specifically that confused me, was the &lt;em&gt;= *&lt;/em&gt; part.  I&amp;#8217;d never seen an asterisk used right after an equals sign like that, it completely caught me off guard; Off to the #ruby &lt;span class=&quot;caps&quot;&gt;IRC&lt;/span&gt; channel I was! It turns out, that &lt;em&gt;*&lt;/em&gt; is called the &lt;strong&gt;splat operator&lt;/strong&gt; in ruby. After a couple minutes asking around and some playtime in irb, I worked out what it did.  In the situation it was used in in ticgit, the result of &lt;strong&gt;commit_log.match(/&amp;#8230;/)&lt;/strong&gt; was&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[&quot;commit 159f9b343e84a1ac4eee716194b2c3ae3769cb7f&quot;, &quot;159f9b343e84a1ac4eee716194b2c3ae3769cb7f&quot;]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And what was happening was the splat operator was saying, put the fist element in the variable &lt;strong&gt;m&lt;/strong&gt;, and put &lt;em&gt;any remaining variables&lt;/em&gt; in an array in the variable &lt;strong&gt;commit_id&lt;/strong&gt;.  The idea behind the splat operator is that if there had been three variables before the &lt;em&gt;= *&lt;/em&gt; part, and four parts of the string matched by .match(), then it would have put the first element in the first variable, the second element in the second variable, and both remaining elements as a 2 element array in the third variable.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://theplana.wordpress.com/2007/03/03/ruby-idioms-the-splat-operator/&quot;&gt;Heres&lt;/a&gt; &lt;a href=&quot;http://stackoverflow.com/questions/776462/where-is-it-legal-to-use-ruby-splat-operator&quot;&gt;a&lt;/a&gt; &lt;a href=&quot;http://chinnakarupan.wordpress.com/2008/03/18/splat-operator-in-ruby/&quot;&gt;couple&lt;/a&gt; &lt;a href=&quot;http://neeraj.name/blog/articles/278-splat-in-ruby&quot;&gt;other&lt;/a&gt; links to help you understand the splat operator if you don&amp;#8217;t already. Playing with it in irb helped me figure out enough of what it did to keep reading the code.&lt;/p&gt;</content>
  </entry>
  
  <entry>

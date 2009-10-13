@@ -3,4 +3,16 @@ layout: post
 title: Ruby's splat operator
 ---
 
-Oh look, this page is about ruby's splat operator, '*'.
+So I've begun maintaining a fork of "Ticgit":http://wiki.github.com/schacon/ticgit and I was reading the source code the other day for fun and I came across an expression that I'd never seen before in ruby code.  The section that I came across was
+
+@commit_log   = `git log -1`.chomp
+m, commit_id = * commit_log.match(/commit\W*([A-Fa-f0-9]+)/)@
+
+And the part specifically that confused me, was the _= *_ part.  I'd never seen an asterisk used right after an equals sign like that, it completely caught me off guard; Off to the #ruby IRC channel I was! It turns out, that _*_ is called the *splat operator* in ruby. After a couple minutes asking around and some playtime in irb, I worked out what it did.  In the situation it was used in in ticgit, the result of *commit_log.match(/.../)* was
+
+@["commit 159f9b343e84a1ac4eee716194b2c3ae3769cb7f", "159f9b343e84a1ac4eee716194b2c3ae3769cb7f"]@
+
+And what was happening was the splat operator was saying, put the fist element in the variable *m*, and put _any remaining variables_ in an array in the variable *commit_id*.  The idea behind the splat operator is that if there had been three variables before the _= *_ part, and four parts of the string matched by .match(), then it would have put the first element in the first variable, the second element in the second variable, and both remaining elements as a 2 element array in the third variable.
+
+"Heres":http://theplana.wordpress.com/2007/03/03/ruby-idioms-the-splat-operator/ "a":http://stackoverflow.com/questions/776462/where-is-it-legal-to-use-ruby-splat-operator "couple":http://chinnakarupan.wordpress.com/2008/03/18/splat-operator-in-ruby/ "other":http://neeraj.name/blog/articles/278-splat-in-ruby links to help you understand the splat operator if you don't already. Playing with it in irb helped me figure out enough of what it did to keep reading the code.
+
