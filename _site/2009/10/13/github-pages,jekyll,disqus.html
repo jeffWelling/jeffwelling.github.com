@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width = 750">
+    <link rel="stylesheet" type="text/css" href="../../../css/stylesheet.css" charset="utf-8">
+    <title>Blogging with Github Pages, Jekyll, and Disqus.</title>
+  </head>
+  <body id="intro">
+    <div id="wrapper">
+      <div id="header" onclick="javascript:window.location='http://jeffwelling.github.com/'">
+        <h1>My Musings</h1>
+      </div>
+      <div id="page_body">
+        <div id="content">
+          <p>Just the other day, I decided to setup blogging on my Github Pages page, <a href="jeffwelling.github.com">jeffwelling.github.com</a> .  It took me longer than I feel was really necessary to get going and one of the most frustrating things, despite the copious amount of docs out there already, was that I really couldn&#8217;t find much information on how to <em>use</em> jekyll (aside from how to use it to host the blog from jekyll itself).<br />
+Some really good material to <a href="http://drnicwilliams.com/2008/12/21/migrating-project-websites-to-github-pages-with-sake-tasks-new-websites-with-jekyll_generator/">help get you oriented</a></p>
+<p>There are many pages and docs out there but few, if any of them were aimed at someone who wasn&#8217;t only new to jekyll but who was kind of new to blogging too; I wasn&#8217;t aware of any blogger terminology or best practices or even common practices.  This blog post is intended to help people in the situation that I was in, you want to start blogging with Github Pages, Jekyll and Disqus for comments but you don&#8217;t know what to do or how to approach this, or you read the jekyll documentation and were still left feeling a bit mystified on how to use the thing.</p>
+<p>First and foremost, you will need an account on Github.com which is where your blog will be hosted.  Your jekyll blog doesn&#8217;t have to be located on Github, but it is the method chosen to be covered in this blog.  For information on hosting it elsewhere, realize that the _sites folder is all you need to copy to your web server, and just Google for jekyll documentation.<br />
+The <a href="http://github.com/plans">Github Signup</a> page has several plans, but I just chose the free one for now.  If your blog gains a lot of traffic you aught to consider upgrading to a pay account, even if for no other reason than to help support the people who are hosting your blog.</p>
+<p>Now that we have a Github account, we can create a repository that will host our blog.<br />
+One of the neat features about Github is that if you create a repository called <span class="caps">NAME</span>.github.com where <span class="caps">NAME</span> is your Github username, then it will be published as a Github Pages website at <a href="http://jeffwelling.github.com/">http://<span class="caps">NAME</span>.github.com/</a> .  My Github username is jeffwelling, following that link will take you to my main blog page and you can see in the address bar what I mean.<br />
+For more information on how you can work with Github Pages and create project specific blogs etc using the gh-pages branch in your project&#8217;s repo, see <a href="http://github.com/blog/272-github-pages">this</a> and more importantly, <a href="http://pages.github.com/">this</a> .  I won&#8217;t be covering it in this blog post.</p>
+<p>Now, we have our Github Pages page setup for our user at <span class="caps">NAME</span>.github.com .  The next step is to install jekyll and start blogging.</p>
+<p>There is a Ruby Gem called <strong>jekyll_generator</strong> which will help you create an empty blog directory.<br />
+I wanted to create and store my blog in my ~/Documents/Blog directory, so I did</p>
+<p><code>$ cd ~/Documents</code><br />
+<code>$ /var/lib/gems/1.8/bin/jekyll_generator Blog --title "My Musings"</code></p>
+<p>I had to call it by the full path for some reason, &#8216;Blog&#8217; is the directory that it will create and put the new empty templates and stuff in, and &#8220;My Musings&#8221; is the title of my blog in case you hadn&#8217;t noticed you insensitive clod!</p>
+<p>At this point, you may want to run</p>
+<p><code>$ git init</code><br />
+<code>$ git add .</code><br />
+<code>$ git commit -a -m "Initial commit"</code><br />
+Just so that you can return to this clean state if you accidentally muck something up.</p>
+<p>This is where I started to get confused though.  I had an empty blog directory, but how did I create a post?<br />
+The answer is easy, you just start writing a textfile.  If you want it to look pretty, check out <a href="http://textile.thresholdstate.com/">Textile</a> and <a href="http://daringfireball.net/projects/markdown/basics">Markup</a> .  Also, remember, if your going to use Textile or Markdown make sure you save it with the appropriate extension, .textile and .markdown .  Where you save the file, and what you name it is the critical part here in making it a blog post.</p>
+<p>When your posting, your post <strong>must</strong> be saved into the ~/Documents/Blog/_posts directory, and it <strong>must</strong> have the name format of <strong>year-month-day-the-title-of-the-post.format</strong> .  By saving the text file in the _posts directory, with that specific format of name, and then running the jekyll command from the ~/Documents/Blog directory, you will create your blog post.</p>
+<p>If the name format still confuses you, take a look at <a href="http://github.com/jeffWelling/jeffwelling.github.com/tree/master/_posts/">my _posts</a> directory.  Currently there are only a handful of posts, but they were all created on October 13th 2009, and so all three of them begin with &#8220;2009-10-13&#8221; and they all end with either &#8220;.textile&#8221; or &#8220;.markdown&#8221; to indicate which markup to use.  The actual <em>title</em> of the post itself, is stored at the top of the file in a section that looks like this;</p>
+<p><code>---</code><br />
+<code>layout: post</code><br />
+<code>title: Ruby's splat operator</code><br />
+<code>---</code></p>
+<p>In this case, the title of the blog post is &#8220;Ruby&#8217;s splat operator&#8221;.  To be honest I&#8217;m not sure if there is a direct relationship between what you put in the filename as your title and what you specify in that short blip at the beginning of the post as your title, if anyone knows what the connection is please comment on it.</p>
+<p>If you haven&#8217;t already done so, you need to initialize your .git repository, and add everything under ~/Documents/Blog/ to it (as per our example above, if you use a different directory then obviously change it to accommodate).</p>
+<p>Now, if you haven&#8217;t already done so, you need to setup your git repository so that you can push to Github to publish your blog on Github Pages by adding an &#8216;origin&#8217; reference which points to Github.  This is outlined on the Github page when you first create your repository.  For example, for me and my blog, the commands were</p>
+<p><strong>$ git remote add origin \ git@github.com:jeffWelling/jeffWelling.github.com.git</strong><br />
+<strong>$  git push origin master</strong></p>
+<p>But you will need to change the user name from jeffWelling to your user name if your going to copy/paste that command.</p>
+<p>Now, you should have a blog hosted on Github Pages using jekyll.  In order to get Disqus comments on your blog, keep reading.  Otherwise you can stop here and be content with your comment-less blog.</p>
+<p>Using Disqus comments on your blog is as easy as creating a Disqus account, pointing it at your blog, and adding a couple lines of source to your default layout files in the &#8220;~/Documents/Blog/_layouts&#8221; directory.  I would copy and paste the lines for Disqus but the lines that they give you to copy are customized per your blog so it will just be easier to tell you to copy and paste what they give you instead.  Note that unfortunately jekyll_generator tries to be friendly and generate the necessary Disqus code for you, but it doesn&#8217;t seem to do it correctly.  I had to manually remove all of the Disqus code, and replace it with the code that I copied dierctly from the Disqus Install Instructions Universal Code section.  If you used jekyll_generator you may have to do the same.</p>
+<p>That should be it, now after running jekyll, commiting and pushing your changes to Github, you should have a wonderful new blog, optionally complete with comments as well!</p>
+<p>How do you create a new post with jekyll? <br />
+Create a new file in the _posts directory with the appropriate date and title information in the name as specified above.  Fill it in with your blog text, and accompanying markup if you like.  Then, run jekyll in the top level blog directory, in my case ~/Documents/Blog .  This will update all the necessary files in _site .  Now, you can do a <br />
+<code>$ git add</code> <br />
+to add any new files/posts, <br />
+<code>$ git commit</code><br />
+to commit your changes, and finally <br />
+<code>$ git push origin</code> <br />
+to push your changes to the server and publish them.</p>
+<p>Now, if you&#8217;ve followed the instructions in this blog, you should have a working Github hosted, jekyll generated, Disqus enabled, git revisioned blog.</p>
+<p>Questions?  Suggestions?  Did I miss something?  Did it not work for you?<br />
+Leave a comment and let me know!<br />
+Cheers.</p>
+          
+          <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/mymusings/embed.js"></script>
+          <noscript><a href="http://disqus.com/forums/mymusings/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+          
+        </div>
+        <div id="sidebar">
+          <div class="item">
+            <!-- Blog   -->
+            <a href="../../../atom.xml" id="rss_feed" name="rss_feed">Blog Posts</a>
+            <h4>Blog Posts</h4>
+            <p>
+               
+                <span>13 Oct 2009</span> » <a href="/2009/10/13/rubys-splat-operator.html">Ruby's splat operator</a><br>
+               
+                <span>13 Oct 2009</span> » <a href="/2009/10/13/github-pages%2Cjekyll%2Cdisqus.html">Blogging with Github Pages, Jekyll, and Disqus.</a><br>
+               
+                <span>13 Oct 2009</span> » <a href="/2009/10/13/first-post.html">Welcome to 'My Musings'</a><br>
+               
+                <span>13 Oct 2009</span> » <a href="/2009/10/13/cool.html">Second post ever</a><br>
+              
+            </p>
+          </div>
+          <div class="item">
+            <script type="text/javascript" src="http://disqus.com/forums/Blog/combination_widget.js?num_items=5&color=orange&default_tab=recent"></script>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p><a href="http://github.com/jeffWelling/jeffwelling.github.com" title="'s Blog at gh-pages &mdash; GitHub">website source</a> | generated by <a href="http://github.com/mojombo/jekyll">jekyll</a> and <a href="http://drnic.github.com/jekyll_generator">jekyll_generator</a></p>
+      </div>
+    </div>
+    <a href="http://github.com/jeffwelling"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  </body>
+</html>
