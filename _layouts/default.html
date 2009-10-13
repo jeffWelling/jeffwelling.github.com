@@ -9,7 +9,7 @@
   </head>
   <body id="intro">
     <div id="wrapper">
-      <div id="header" onclick="javascript:window.location='/Blog/'">
+      <div id="header" onclick="javascript:window.location='http://jeffwelling.github.com/'">
         <h1>My Musings</h1>
       </div>
       <div id="page_body">
@@ -22,7 +22,7 @@
             <h4><a href="atom.xml" id="rss_feed" name="rss_feed">Blog Posts</a></h4>
             <p>
               {% for post in site.posts %} 
-                <span>{{ post.date | date_to_string }}</span> » <a href="/Blog{{ post.url }}">{{ post.title }}</a><br>
+                <span>{{ post.date | date_to_string }}</span> » <a href="/{{ post.url }}">{{ post.title }}</a><br>
               {% endfor %}
             </p>
           </div>
