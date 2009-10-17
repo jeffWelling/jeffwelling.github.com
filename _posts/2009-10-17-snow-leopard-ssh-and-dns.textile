@@ -1,0 +1,28 @@
+---
+layout: post
+title: Apple's Snow Leopard, ssh, and dns
+---
+I use ssh extremely frequently, I think many *nix users with multiple machines to care for do.  If it doesn't come installed, or isn't installable with apt/synaptic or your system's package management tools, you should consider getting a real operating system.
+
+I have my internal name service set up somewhat unusually, to me at least.  Instead of having it setup as 'Computer1.network.com' or whatever, because I don't have or intend to get a real registered name I just set it up as 'Computer1.network', and so far it's work fantastically.  I only mention this because its a little bit of an unusual(/non-standard?) setup and so could be contributing to the problem.
+
+In Leopard, this wasn't a problem at all, but as soon as I upgraded to Snow Leopard I was left with this big, ugly, nasty bug glaring me in the face.  The bug is obvious just in the output of what I was trying to do;
+
+@user$ ssh foo@
+@ssh: Could not resolve hostname foo: nodename nor servname provided, or not known@
+@user$ nslookup foo@
+@Server:         192.168.1.20@
+@Address:        192.168.1.20#53@
+
+@Name:   foo.Network@
+@Address: 192.168.1.20@
+
+@user$ ssh foo.network@
+@ssh: Could not resolve hostname foo.network: nodename nor servname provided, or not known@
+@user$ ssh 192.168.1.20@
+@user(at)192.168.1.20's password:@
+
+The problem is clear as day, ssh apparently cannot resolve the names that exist in my name server, but using the IP address works.
+What exactly Apple changed I have no idea, but evidently in the process they've pissed all over ssh's ability to do name lookups properly.  Yes, it could have something to do with my slightly unusual naming convention but I think the fact that it worked sans Snow Leopard, and then after installation suddenly stops is a pretty good indication that they broke something.
+
+Hopefully, they get around to fixing it soon, cause while I could easily just create alias entries in my .bashrc file for 1 or 2 or even a bunch of IPs, that can't be done dynamically and many of the hosts on my network are dynamic.  If this isn't fixed soon I'll just have to switch back to Leopard, I haven't noticed many other enticing features that I'd miss.  Even the much hyped Grand Central seems mildly over-rated, granted I haven't done benchmarking or intensive CPU tasks to compare against but anyone toting "Grand Central is going to double or even triple the speed of the interface!", yeah... no.
