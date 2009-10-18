@@ -22,7 +22,7 @@ In Leopard, this wasn't a problem at all, but as soon as I upgraded to Snow Leop
 @user$ ssh 192.168.1.20@
 @user(at)192.168.1.20's password:@
 
-The problem is clear as day, ssh apparently cannot resolve the names that exist in my name server, but using the IP address works.
+The problem is clear as day, ssh apparently cannot resolve the names that exist in my name server, but using the IP address works.  Whats particularly strange, is that its intermittent.  It will work say, freshly after a reboot, but later on in the day after a couple hours have passed, it stops working. o.0
 What exactly Apple changed I have no idea, but evidently in the process they've pissed all over ssh's ability to do name lookups properly.  Yes, it could have something to do with my slightly unusual naming convention but I think the fact that it worked sans Snow Leopard, and then after installation suddenly stops is a pretty good indication that they broke something.
 
 Hopefully, they get around to fixing it soon, cause while I could easily just create alias entries in my .bashrc file for 1 or 2 or even a bunch of IPs, that can't be done dynamically and many of the hosts on my network are dynamic.  If this isn't fixed soon I'll just have to switch back to Leopard, I haven't noticed many other enticing features that I'd miss.  Even the much hyped Grand Central seems mildly over-rated, granted I haven't done benchmarking or intensive CPU tasks to compare against but anyone toting "Grand Central is going to double or even triple the speed of the interface!", yeah... no.
