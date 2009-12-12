@@ -4,13 +4,25 @@
  <title>My Musings</title>
  <link href="http://.github.com/Blog/atom.xml" rel="self"/>
  <link href="http://.github.com/Blog/"/>
- <updated>2009-12-12T11:54:42-08:00</updated>
+ <updated>2009-12-12T12:07:57-08:00</updated>
  <id>http://.github.com/Blog/</id>
  <author>
    <name>Dr Nic Williams</name>
    <email>williams@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Why is Myspace so slow?</title>
+   <link href="http://.github.com/Blog/2009/12/12/Myspace-is-SO-SLOW.html"/>
+   <updated>2009-12-12T00:00:00-08:00</updated>
+   <id>http://.github.com/Blog/2009/12/12/Myspace-is-SO-SLOW</id>
+   <content type="html">&lt;p&gt;Yes, that is a rhetorical question.  I know why.&lt;br /&gt;
+The question isn&amp;#8217;t so much why, it&amp;#8217;s more how the hell do so many people sit on MySpace and Facebook when their sites are slow as shit?&lt;/p&gt;
+&lt;p&gt;Seriously, taking a couple seconds to load &lt;em&gt;each page&lt;/em&gt;?  What is this, the days of dialup?&lt;br /&gt;
+Drop some of the flash and javascript bullshit you&amp;#8217;ve over-laiden your site with, and maybe it would run faster.&lt;/p&gt;
+&lt;p&gt;Disgusting.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>My IM name on Myspace</title>
