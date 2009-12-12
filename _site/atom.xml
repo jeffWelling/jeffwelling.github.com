@@ -4,7 +4,7 @@
  <title>My Musings</title>
  <link href="http://.github.com/Blog/atom.xml" rel="self"/>
  <link href="http://.github.com/Blog/"/>
- <updated>2009-12-12T12:07:57-08:00</updated>
+ <updated>2009-12-12T12:28:47-08:00</updated>
  <id>http://.github.com/Blog/</id>
  <author>
    <name>Dr Nic Williams</name>
@@ -37,6 +37,18 @@ You see, the proper way to do it, is to allow any user to use any username they 
 &lt;p&gt;But, instead, they do it the half-assed way where everyone shares one big namespace, meaning that if someone has already taken the MySpace IM name you want to use, like your actual fucking name, tough.  This is what happens when you have retards sitting in a room with retards in suits, trying to design something they think will be successfull.&lt;/p&gt;
 &lt;p&gt;&amp;#8220;Oh well if we have an instant messaging service, people will love us, and fuck functionality and namespace collisions.&amp;#8221;&lt;/p&gt;
 &lt;p&gt;Asshats with a cocain addiction, I tell you what.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Facebook, What The Fuck?</title>
+   <link href="http://.github.com/Blog/2009/12/12/Facebook-What-the-fuck.html"/>
+   <updated>2009-12-12T00:00:00-08:00</updated>
+   <id>http://.github.com/Blog/2009/12/12/Facebook-What-the-fuck</id>
+   <content type="html">&lt;p&gt;I don&amp;#8217;t know if it was intentional or not, but breaking &lt;span class=&quot;caps&quot;&gt;ABSOLUTELY&lt;/span&gt; &lt;span class=&quot;caps&quot;&gt;BASIC&lt;/span&gt; functionality of being able to tab between fields on your forms is the one of the most shortsighted things you could have done.&lt;/p&gt;
+&lt;p&gt;Tabbing between fields in a form is the easiest way of getting between them, and you fucking broke it.  Congratulations.&lt;/p&gt;
+&lt;p&gt;Now, instead, you have to type in what you were going to type in, and instead of hitting tab (&amp;#8217;Cause if you do hit tab, it obliterates everything you typed in that field) you have to use the mouse which is infinitely slower.&lt;/p&gt;
+&lt;p&gt;See, little reasons like this are why I fucking hate sites like Facebook and Myspace.  They were designed by, are operated and maintained by, completely inept fucking clueless 13 year old girls who think the next shiny thing has to be implemented or they might fall behind.&lt;/p&gt;
+&lt;p&gt;How about a site that loaded instantly, was clean from as much Java and Flash cruft as possible, and was actually simple and easy to use?  The fuck man..  Simple clean interfaces are infinitely better than complicated intricate java and flash ridden sluggish excuses for sites that you guys maintain.&lt;/p&gt;</content>
  </entry>
  
  <entry>
