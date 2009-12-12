@@ -4,13 +4,26 @@
  <title>My Musings</title>
  <link href="http://.github.com/Blog/atom.xml" rel="self"/>
  <link href="http://.github.com/Blog/"/>
- <updated>2009-12-12T12:28:47-08:00</updated>
+ <updated>2009-12-12T12:42:35-08:00</updated>
  <id>http://.github.com/Blog/</id>
  <author>
    <name>Dr Nic Williams</name>
    <email>williams@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Facebook, What The Fuck?</title>
+   <link href="http://.github.com/Blog/2009/12/12/Social-Networking-Me.html"/>
+   <updated>2009-12-12T00:00:00-08:00</updated>
+   <id>http://.github.com/Blog/2009/12/12/Social-Networking-Me</id>
+   <content type="html">&lt;p&gt;Alright, so I bit the bullet and did the Myspace and Facebook thing.&lt;br /&gt;
+You can find me on Myspace at http://www.myspace.com/512643590&lt;/p&gt;
+&lt;p&gt;You can find me on Facebook at http://www.facebook.com/profile.php?ref=name&amp;amp;id=100000562880858&lt;/p&gt;
+&lt;p&gt;There.  Now you internet people can find me, see me, message me, touch yourselves at night while thinking about me, whatever you like.  Play safe :)&lt;/p&gt;
+&lt;p&gt;The best way to get in touch with me is still via Email, Phone, and Text, in that order.&lt;/p&gt;
+&lt;p&gt;Jeff (dot) Welling (at) Gmail (dot) com&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Why is Myspace so slow?</title>
