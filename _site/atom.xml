@@ -4,13 +4,28 @@
  <title>My Musings</title>
  <link href="http://.github.com/Blog/atom.xml" rel="self"/>
  <link href="http://.github.com/Blog/"/>
- <updated>2009-10-19T11:51:56-07:00</updated>
+ <updated>2009-12-12T11:54:42-08:00</updated>
  <id>http://.github.com/Blog/</id>
  <author>
    <name>Dr Nic Williams</name>
    <email>williams@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>My IM name on Myspace</title>
+   <link href="http://.github.com/Blog/2009/12/12/Myspace-IM-name.html"/>
+   <updated>2009-12-12T00:00:00-08:00</updated>
+   <id>http://.github.com/Blog/2009/12/12/Myspace-IM-name</id>
+   <content type="html">&lt;p&gt;If you&amp;#8217;ve ever spent time talking to my on Myspace&amp;#8217;s IM client, you may be wondering why my IM name is &amp;#8220;24c55ff09e08ac35c6993bdcb88a75b7479568b0&amp;#8221;.&lt;/p&gt;
+&lt;p&gt;Well, let me explain.&lt;/p&gt;
+&lt;p&gt;Myspace is fucking retarded, from top to bottom.  I don&amp;#8217;t mean the site itself, or the idea of social networking, I mean the inept fucking retards running the whole thing.  Case in point;&lt;br /&gt;
+Myspace IM requires that your &amp;#8216;name&amp;#8217; be unique, and not be the same as any other user.  Why? Who fucking knows. Let me tell you how its &lt;span class=&quot;caps&quot;&gt;SUPPOSED&lt;/span&gt; to be done.&lt;br /&gt;
+You see, the proper way to do it, is to allow any user to use any username they wish.  This is done by combining the &lt;span class=&quot;caps&quot;&gt;ALREADY&lt;/span&gt; &lt;span class=&quot;caps&quot;&gt;UNIQUE&lt;/span&gt; email address that was used during the signup process, with whichever IM username the user wants.  Using this method, the user has any username they want in their IM client from their full name, &amp;#8220;Jeff Welling&amp;#8221; in my case, to &amp;#8220;That creepy pastor at your church&amp;#8221; and because its multiplexed on your email address, it is still unique when compared against any other user and email address.&lt;/p&gt;
+&lt;p&gt;But, instead, they do it the half-assed way where everyone shares one big namespace, meaning that if someone has already taken the MySpace IM name you want to use, like your actual fucking name, tough.  This is what happens when you have retards sitting in a room with retards in suits, trying to design something they think will be successfull.&lt;/p&gt;
+&lt;p&gt;&amp;#8220;Oh well if we have an instant messaging service, people will love us, and fuck functionality and namespace collisions.&amp;#8221;&lt;/p&gt;
+&lt;p&gt;Asshats with a cocain addiction, I tell you what.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Apple's Snow Leopard, ssh, and dns</title>
