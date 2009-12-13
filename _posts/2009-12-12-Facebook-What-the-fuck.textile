@@ -1,0 +1,15 @@
+
+---
+layout: post
+title: Facebook, What The Fuck?
+---
+
+I don't know if it was intentional or not, but breaking ABSOLUTELY BASIC functionality of being able to tab between fields on your forms is the one of the most shortsighted things you could have done.
+
+Tabbing between fields in a form is the easiest way of getting between them, and you fucking broke it.  Congratulations.
+
+Now, instead, you have to type in what you were going to type in, and instead of hitting tab ('Cause if you do hit tab, it obliterates everything you typed in that field) you have to use the mouse which is infinitely slower.
+
+See, little reasons like this are why I fucking hate sites like Facebook and Myspace.  They were designed by, are operated and maintained by, completely inept fucking clueless 13 year old girls who think the next shiny thing has to be implemented or they might fall behind.
+
+How about a site that loaded instantly, was clean from as much Java and Flash cruft as possible, and was actually simple and easy to use?  The fuck man..  Simple clean interfaces are infinitely better than complicated intricate java and flash ridden sluggish excuses for sites that you guys maintain.
