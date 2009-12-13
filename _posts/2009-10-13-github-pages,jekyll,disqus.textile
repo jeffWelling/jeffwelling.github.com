@@ -75,8 +75,3 @@ Now, if you've followed the instructions in this blog, you should have a working
 Questions?  Suggestions?  Did I miss something?  Did it not work for you?
 Leave a comment and let me know!
 Cheers.
-
-@---@
-@layout: post@
-@title: Ruby's splat operator@
-@---@
