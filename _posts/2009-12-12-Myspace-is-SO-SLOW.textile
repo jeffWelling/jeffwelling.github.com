@@ -10,4 +10,6 @@ The question isn't so much why, it's more how the hell do so many people sit on 
 Seriously, taking a couple seconds to load _each page_?  What is this, the days of dialup?
 Drop some of the flash and javascript bullshit you've over-laiden your site with, and maybe it would run faster.
 
-Disgusting.
+Why do you think Google's site is so minimal, because they can't think of anything to put on it? Ha!  They understand, simple, fast, elegant.
+
+More features, bells and whistles does not a better website make!
