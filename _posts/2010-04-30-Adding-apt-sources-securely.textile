@@ -1,0 +1,11 @@
+
+---
+layout: post
+title: Adding Apt sources securely
+---
+
+Some programs from some groups want you to add their repositories to your apt's sources.list file in order to install their program and easily facilitate updates.  But, what's to stop them from adding a malicious library or program named something like libc6, something included by default in most installers, and incrementing the version thus tricking your apt into installing it?
+
+Well, consulting the debian IRC channel gave a helpful response. Use "apt pinning":http://jaqque.sbih.org/kplug/apt-pinning.html .
+By giving the untrusted repository a low priority, you can assure that your preferred apt sources are used before the untrusted one while still allowing you to install the app you want from their repo.
+Then just do *@apt-get -t something app_name@* to install the app, where something is whatever you used on the right side of the a= line in your apt preferences file.

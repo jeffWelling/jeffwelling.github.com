@@ -1,0 +1,19 @@
+---
+layout: post
+title: Getting Debian to send your DHCP server it's hostname for Dynamic DNS
+---
+
+So after installing doing a simple Debian 5.0 stable install the other day, I noticed when the machine booted, it's hostname wasn't being mapped in my dns server to hostname.local like my Mac and Ubuntu machine do.
+
+Now to clarify, I'm _not_ talking about dynamic dns in that your server updates your dns records over at EasyDNS or whoever you pay for your dns records, there are packages in the apt repos for that.  What I'm talking about is when you configure your DHCP server to update your DNS server when hosts request an address.
+
+I found the way to get the fresh Debian system to get its hostname registered in DNS was to tweak the default /etc/dhcp3/dhclient.conf, uncommenting the 
+*@send host-name "";@*
+line, and adding in your hostname in between the quotes.
+
+After saving the file and restarting you should now see be able to do an nslookup on that machine's hostname and have pleasant results.
+If anyone out there knows how to take it that one step further so that you don't have to manually add in a hostname, but can instead get it to automatically detect the hostname and use it.  In the dhclient.conf man page, there is mention of
+*@send fqdn.fqdn "";@*
+*@send fqdn.encoded on;@*
+*@send fqdn.server-update off;@*
+but, that looks like it has to do with handling updating the dns server from that client instead of from the dhcp server itself, and which doesn't seem to give any clue about how to get it to automatically detect and use the hostname.
