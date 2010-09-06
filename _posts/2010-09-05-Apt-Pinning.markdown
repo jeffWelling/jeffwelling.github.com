@@ -3,7 +3,7 @@ layout: post
 title: Apt Pinning
 ---
 
-[Apt Pinning](http://jaqque.sbih.org/kplug/apt-pinning.html) is a great way of installing packages from testing or unstable on your stable system.  This is especially useful when I'm working on a project that requires a newer version of a library than is currently in Debian Stable, but has too many uses to enumerate here.
+[Apt Pinning](http://jaqque.sbih.org/kplug/apt-pinning.html) is a great way of installing packages from testing or unstable on your stable system.  This is especially useful for me when I'm working on a project that requires a newer version of a library than is currently in Debian Stable, but has too many uses to enumerate here.
 
 If you'll notice though, the Apt Pinning page that comes up at the top of Google searches is somewhat lacking in detail in some aspects.
 
@@ -67,7 +67,7 @@ Theres two ways two install packages;
 
     aptitude install <package>/unstable
 
-Will install <package> from unstable trying to meet dependencies from stable, and this may not always work which is why I use;
+Will install package from unstable trying to meet dependencies from stable, and this may not always work which is why I use;
 
     aptitude -t unstable install <package>
 
