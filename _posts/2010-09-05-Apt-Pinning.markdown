@@ -26,12 +26,13 @@ and a [second one](http://jaqque.sbih.org/kplug/sources.list).
 
 The first example is odd because first of all, it doesn't include a line for security.debian.org, and second it has 2 lines for each version - to my understanding this is superfluous.  You only _need_ one line for each of Stable Testing and Unstable, but more can be added.
 
-The problem with the second example is there are so many extraneous lines, and it includes lines that if included today wouldn't work.
+The problem with the second example is there are so many extraneous lines, and it includes lines that if included today wouldn't work, and some lines that should be explained so that they can be improved on for international users.  You'll notice in the second example, as well as in my example below that the URLs like `ftp.ca.debian.org` and `ftp.us.debian.org` have a pattern, the 2 letter country code in between `ftp.` and `debian.org`.  This can be changed to your local country code to use a local mirror instead of a mirror from Canada or the US.
+
 This is my sources.list file.  I use main contrib and non-free, but if you just wanted to use main or main and contrib you can change it accordingly.
 
-    deb http://mirror.peer1.net/debian/ stable main contrib non-free
+    deb http://ftp.ca.debian.org/debian/ stable main contrib non-free
     deb http://security.debian.org/ stable/updates main contrib non-free
-    deb-src http://mirror.peer1.net/debian/ stable main contrib non-free
+    deb-src http://ftp.ca.debian.org/debian/ stable main contrib non-free
     deb-src http://security.debian.org/ stable/updates main contrib non-free
 
     deb http://volatile.debian.org/debian-volatile stable/volatile main contrib non-free
