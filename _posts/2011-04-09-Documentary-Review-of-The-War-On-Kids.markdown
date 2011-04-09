@@ -7,7 +7,7 @@ The War On Kids is a documentary that explores the war on school children in the
 
 Because it is being argued by school administrators that kids aren't people, they are being treated as if they have no rights.  They are interrogated by their principals who then turn the 'testimony' over to the police, without asking parents for permission to question them, and without reading the student their miranda rights.  Many students are being charged with felony offences for trivial infractions, things like one student shoving another can become a felony assault charge and can cost that student his right to vote, turning this into a very concerning issue of eroding democratic values.  
 
-The film then discusses the extent to which pharmaceutical drugs are being prescribed to children. It notes that in England, these same drugs have been banned for use on kids because there is no evidence that they work with kids. It mentions how these drugs are stunting the growth of many of the students who are taking them, and highlights a powerful correlation between anti-depressants and school shooting.  
+The film then discusses the extent to which pharmaceutical drugs are being prescribed to children. It notes that in England, these same drugs have been banned from being used on kids because there is no evidence that they work with kids. It mentions how these drugs are stunting the growth of many of the students who are taking them, and highlights a powerful correlation between anti-depressants and school shooting.  
 
 Apparently this phenomenon extends all the way to the Supreme Court.  In 1988 the US Supreme Court ruled that schools may censor student news papers.  The state now also dictates curriculum, even for history classes.  
 
