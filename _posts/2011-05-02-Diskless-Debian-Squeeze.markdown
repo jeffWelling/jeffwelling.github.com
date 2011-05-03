@@ -30,7 +30,7 @@ Most networks already have a DHCP server configured, and having more than one of
 
 Now, configure the DHCP server.  I prefer vim,
 
-    `vim /etc/dhcp3/dhcpd.conf` 
+    vim /etc/dhcp3/dhcpd.conf 
 
 You need to add a `next-server` and `filename` options, and the resulting file should look something like this.  
 
