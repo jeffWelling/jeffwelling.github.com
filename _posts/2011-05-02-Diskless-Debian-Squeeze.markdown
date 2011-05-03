@@ -108,10 +108,10 @@ the tftp folder is in `/var/lib/tftpboot`.
 
     mkdir -p /var/lib/tftpboot/pxelinux.cfg  
     cp /usr/lib/syslinux/pxelinux.0 /var/lib/tftpboot/.  
-    cp /nfs/zim/boot/vmlinuz<TAB> /var/lib/tftpboot/vmlinuz-zim  
+    cp /nfs/zim/boot/vmlinuzTAB /var/lib/tftpboot/vmlinuz-zim  
     cp /nfs/zim/boot/initrd.img.netboot /var/lib/tftpboot/initrd.img.zim  
 
-Where you see <TAB>, press the TAB key and it will automagically fill in the kernel version, assuming you only have one version in there.  
+Where you see TAB, press the TAB key and it will automagically fill in the kernel version, assuming you only have one version in there.  
 Now, create a PXE config file
 
     vim /var/lib/tftpboot/pxelinux.cfg/default
