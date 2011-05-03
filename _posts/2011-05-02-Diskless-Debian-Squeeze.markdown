@@ -14,14 +14,14 @@ The easiest way to do this IMO is to actually install Debian Squeeze to a machin
 
 **On the server**, you will need these packages   
 
-     `apt-get install dhcp3-server`  
-     `apt-get install tftp-hpa`  
-     `apt-get install syslinux`  
-     `apt-get install nfs-kernel-server`  
+     apt-get install dhcp3-server  
+     apt-get install tftp-hpa  
+     apt-get install syslinux  
+     apt-get install nfs-kernel-server  
 
 **On the client**, you will need these packages
 
-     `apt-get install initramfs-tools`
+     apt-get install initramfs-tools
 
 ### Configure DHCP server 
 
