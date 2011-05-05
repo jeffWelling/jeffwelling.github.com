@@ -129,6 +129,6 @@ Don't forget the changes you've made to the existing machine, in it's current st
 
 ### References
 
-http://wiki.linuxquestions.org/wiki/Diskless_Workstation  
-https://help.ubuntu.com/community/DisklessUbuntuHowto  
+[http://wiki.linuxquestions.org/wiki/Diskless_Workstation](http://wiki.linuxquestions.org/wiki/Diskless_Workstation)  
+[https://help.ubuntu.com/community/DisklessUbuntuHowto](https://help.ubuntu.com/community/DisklessUbuntuHowto)  
 
