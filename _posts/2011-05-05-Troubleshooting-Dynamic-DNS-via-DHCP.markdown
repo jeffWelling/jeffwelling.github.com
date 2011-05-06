@@ -26,5 +26,7 @@ After restarting both DHCP and DNS services, starting up a VM that was [properly
 ### References
 
 [http://www.debian-administration.org/article/343/Configuring_Dynamic_DNS__DHCP_on_Debian_Stable](http://www.debian-administration.org/article/343/Configuring_Dynamic_DNS__DHCP_on_Debian_Stable)  
+
 [http://brunogirin.blogspot.com/2007/11/dhcp-and-dynamic-dns-on-ubuntu-server.html](http://brunogirin.blogspot.com/2007/11/dhcp-and-dynamic-dns-on-ubuntu-server.html)  
+
 [http://jeffwelling.github.com/2010/01/02/Debian-dynamic-dns.html](http://jeffwelling.github.com/2010/01/02/Debian-dynamic-dns.html)  
