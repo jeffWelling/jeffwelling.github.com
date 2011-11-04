@@ -17,3 +17,5 @@ If anyone out there knows how to take it that one step further so that you don't
 *@send fqdn.encoded on;@*
 *@send fqdn.server-update off;@*
 but, that looks like it has to do with handling updating the dns server from that client instead of from the dhcp server itself, and which doesn't seem to give any clue about how to get it to automatically detect and use the hostname.
+
+Reference: http://brunogirin.blogspot.com/2007/11/dhcp-and-dynamic-dns-on-ubuntu-server.html
