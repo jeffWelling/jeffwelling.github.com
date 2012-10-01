@@ -6,23 +6,20 @@ title: How to commit with Rugged
 
 So far in my brief use, the Rugged gem seems to be a delightfully fast way of using git in Ruby, I just have one gripe (and it's a petty one): The interface takes getting used to and requires intimate knowledge of the inner workings of git.
 
-Rugged is still early in development, note that as of this writing it has yet to reach '1.0' and so I expect this will change in the future, but at present in order to use Rugged you don't use a method called 'commit', you need to know what a commit does. 
+Rugged is still in development, so this blog may be out of date by the time you read it, you should definitely check with the lates documentation for both Rugged and libgit2 (if there is a discrepency in the documentation of one project about how the other project works, go with the documentation that goes with the project). 
 
-When you're using Git from the command line, the normal procedure for committing is to `git add foo/bar/myfile.rb` and then to `git commit`. The first command will add `foo/bar/myfile.rb` to what git refers to as its index, files here are referred to as 'staged'. The mechanics of `git add` are a little more nuanced then that, the add command is what actually creates the tree and blob objects, but for the purposes of this brief howto we will glaze over that for now. The commit command takes the tree and blob objects and ties them together in the commit by storing the sha of the base tree in the commit. That tree object points to all of the blobs under it as well as any trees, and by looking up those trees you can get their children and so on, so by storing a reference to that base tree you are storing a reference for the state of your entire repository at that point in time. After the commit object is saved, the head for your current branch is updated to point to the new commit object.
+1) Add the files to the index.  
+2) Write the index.  
+3) Create the commit.  
+4) Save the commit.  
 
-So now that we have a rough idea of how the git command works, you have a rough idea of what you have to do with Rugged in order to do a commit.  
-
-Note: To get the sha of an object, the method you're looking for is `obj.oid`.  
-
-1) Create the necessary tree and blob objects.  
-2) Create the commit.  
-3) Save the commit.  
+Which can be done like this;  
 
     pry$ require 'rugged'  
     pry$ repo = Rugged::Repository.new repository_path  
     pry$ index = repo.index  
     pry$ index.add 'second_fakefile'  
-    pry$ tree= repo.lookup( repo.index.write_tree )  
+    pry$ tree= repo.lookup( repo.index.write_tree )    #At this point, the files are staged
     pry$ author={ :email=>'jeff.welling@gmail.com', :time=>Time.now, :name=>'Jeff Welling' }  
     pry$ parents=[ repo.lookup( repo.head.target ).oid ]  
 
@@ -42,7 +39,11 @@ I double-checked my usage against the documentation from the README on the Rugge
 
 Note: The `:update_ref` option to the Commit.create command isn't documented in the README on the Rugged Github page, but if it documented in the comments in the `ext/rugged_commit.c` file in the Github repository, and I've tested using it.  The catch is that without that, the commit will be created and written to the ODB but no reference will be updated so it will appear to most people that Commit.create is broken because they can't see it on any of their branches.  
 
+Note: To get the sha of an object, the method you're looking for is `obj.oid`.  
+
 And so that is the story of how I learned to do commits in Rugged. I hope this has been useful or at least an educational read for you.
+
+I went back after the fact and ran the tests that came with 0.16.0 and many of the tests relating to creating and writing commits failed, so it's no wonder I was having trouble.  Hopefully 0.17.0 has been published as non-prerelease by the time you come to using Rugged.
 
 References:
 http://librelist.com/browser//libgit2/2011/2/19/initing-a-repository-adding-files-to-the-index-and-committing/#d94ce8df18ff0202ce904180286a4a85
