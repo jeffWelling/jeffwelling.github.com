@@ -46,9 +46,15 @@ And so that is the story of how I learned to do commits in Rugged. I hope this h
 I went back after the fact and ran the tests that came with 0.16.0 and many of the tests relating to creating and writing commits failed, so it's no wonder I was having trouble.  Hopefully 0.17.0 has been published as non-prerelease by the time you come to using Rugged.
 
 References:  
+0) [http://stackoverflow.com/questions/12649697/how-to-commit-with-ruby-bindings-for-libgit2/12651234][0]
 1) [http://librelist.com/browser//libgit2/2011/2/19/initing-a-repository-adding-files-to-the-index-and-committing/#d94ce8df18ff0202ce904180286a4a85][1]  
 2) [https://github.com/libgit2/rugged/blob/development/ext/rugged/rugged_commit.c][2]  
+3) [https://github.com/libgit2/rugged][3]
+4) [http://rubydoc.info/gems/rugged/0.16.0/frames][4]
+
 
 [0]: http://stackoverflow.com/questions/12649697/how-to-commit-with-ruby-bindings-for-libgit2/12651234
 [1]: http://librelist.com/browser//libgit2/2011/2/19/initing-a-repository-adding-files-to-the-index-and-committing/#d94ce8df18ff0202ce904180286a4a85
 [2]: https://github.com/libgit2/rugged/blob/development/ext/rugged/rugged_commit.c
+[3]: https://github.com/libgit2/rugged
+[4]: http://rubydoc.info/gems/rugged/0.16.0/frames
