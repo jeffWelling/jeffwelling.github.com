@@ -1,0 +1,60 @@
+---
+layout: post
+title: Xen on Debian Part 1
+---
+
+[Xen is a bare metal hypervisor](http://en.wikipedia.org/wiki/Xen), and a really neat one at that. If you're used to the VMWare world, it works a bit differently from vSphere in that when you install vSphere you don't have access to [dom0](http://wiki.xen.org/wiki/Dom0), vSphere is dom0, but in Xen you have access to and [get to choose (within reason)](http://wiki.xen.org/wiki/Dom0_Kernels_for_Xen) which operating system runs in dom0, though you'll want to make that decision long before it comes time to install xen itself.
+
+There are plenty of places out there already that talk about Xen and what it is, and how it compares to other hypervisors, so I won't digress into that here. This page assumes you already kind of know what Xen is and know that you want to give it a go to see it in action.
+
+## Installation ##  
+
+Installation is quite straight-forward;
+
+* Choose and install dom0 Operating System -- in this case Debian
+* `apt-get install xen-linux-system`
+* Edit Grub to boot from Xen
+* Reboot
+
+Well OK, there's a couple tricks. I found that in order to get Xen to boot by default I had to reboot to see what the menu entry index was (it was the 5th down, so index 4), then I could edit Grub to boot Xen, then I rebootted into Xen. Booting in to Xen is the easy part, figuring out the networking shenanigans is something else entirely.  In hindsight, it's actually pretty straight forward once  you know what you're doing but figuring out what to do on a Debian system from the documentation on the Xen wiki is, to put it kindly, lacking.  I understand from reading the documentation that the way that Xen handles networking on non-Debian systems is widely different from the way that it's done on Debian.  I've only dealt with the Debian way so I can't speak to which is easier, but the Debian way is pretty easy if you ask me. The following instructions assume 'eth0' is the only ethernet port on the system, please adapt for your configuration.
+
+* `ifdown eth0`
+* Edit /etc/network/interfaces, change it to reflect this;
+
+		iface eth0 inet manual
+		iface xenbr0 inet static
+			bridge_ports eth0
+			address 192.168.X.X
+			netmask 255.255.255.0
+			gateway 192.168.X.X
+			bridge_stp off
+			bridge_maxwait 0
+			bridge_fd 0
+	  #Please change the IP address and gateway to valid values before using.
+* Edit /etc/xen/xend-config.sxp -- Do not uncomment any of the network scripts which look like this "(network-script network-bridge)" "(network-script 'network-bridge bridge=br0')" and "(network-script 'network-bridge netdev=eth0')".  Because we are running Debian and we setup the bridge manually by editing the `/etc/network/interfaces` file, we don't need the network-scripts.  This is one of the things that the documentation on the Xen wiki confused me, I was trying to get it to work with the network scripts which caused me all kinds of headaches.
+* Verify that this file contains an un-commented-out line 
+    (vif-script vif-bridge)
+* It would be a good idea for you to browse through the rest of this file, if only to give yourself an idea of what options are available to you.
+
+
+And that's it for Installation! Really quite easy, comparatively.  Now of course you'll want to try and spin up a new VM, and who wouldn't! So, on to the next section!
+
+## Hello Virtual World ##
+
+[Full details are available on the Xen wiki](http://wiki.debian.org/Xen) but for now, we'll jump straight to setting up our first VM. So exciting!
+
+First of all, we need to install the tool that creates the VMs.
+
+`apt-get install xen-tools`
+
+And after that completes we can make our first VM!
+
+`xen-create-image --hostname Tux --ip 192.168.0.5 --vcpus 1 --pygrub --dist squeeze --dir ~/`
+
+This will create a new VM in your home directory in a sub-directory called 'xen'.  It will default to 128 Megabytes of RAM if you don't provide that on the command line with the `--memory=` option, which by the way, takes a number such as '2Gb'.  Please note that '2GB' is not acceptable, nor is '2', as I found out through my own testing. You can also set the size of the disk image using the `--size=` option, and I would strongly encourage you to read the man page for xen-create-image to give yourself an idea of what is possible when you create the image.  It's possible to specify the root password, it's also possible to it to use a randomized password for root and display that to you after completing the xen-create-image command, set the VM to boot after creation, and a plethora of other cool options.
+
+So, now you've got your first VM created, how do we start it?  Well, one way is to specify the `--boot` option in the xen-create-image command, or you can start if after the fact using the command
+
+`xm create /etc/xen/Tux.cfg`
+
+Please note that the filename that you pass to the `xm create` command is $HOSTNAME.cfg so if you used a hostname other than Tux then you'll need to use that hostname here as well.  If there's any confusion, check the contents of the `/etc/xen` directory for an idea of the available VMs and their hostnames.  
