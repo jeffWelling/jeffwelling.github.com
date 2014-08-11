@@ -52,6 +52,8 @@ And after that completes we can make our first VM!
 
 `xen-create-image --hostname Tux --ip 192.168.0.5 --gateway 192.168.0.1 --netmask 255.255.255.0 --nameserver 192.168.0.1 --vcpus 1 --pygrub --dist squeeze --dir ~/`
 
+This command will take awhile to run.  
+
 This will create a new VM in your home directory in a sub-directory called 'xen'.  It will default to 128 Megabytes of RAM if you don't provide that on the command line with the `--memory=` option, which by the way, takes a number such as '2Gb'.  Please note that '2GB' is not acceptable, nor is '2', as I found out through my own testing. You can also set the size of the disk image using the `--size=` option, and I would strongly encourage you to read the man page for xen-create-image to give yourself an idea of what is possible when you create the image.  It's possible to specify the root password, it's also possible to it to use a randomized password for root and display that to you after completing the xen-create-image command, set the VM to boot after creation, and a plethora of other cool options.
 
 So, now you've got your first VM created, how do we start it?  Well, one way is to specify the `--boot` option in the xen-create-image command, or you can start if after the fact using the command
