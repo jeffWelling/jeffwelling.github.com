@@ -35,6 +35,7 @@ Well OK, there's a couple tricks. I found that in order to get Xen to boot by de
 * Verify that this file contains an un-commented-out line 
     (vif-script vif-bridge)
 * It would be a good idea for you to browse through the rest of this file, if only to give yourself an idea of what options are available to you.
+* `ifup xenbr0`
 
 
 And that's it for Installation! Really quite easy, comparatively.  Now of course you'll want to try and spin up a new VM, and who wouldn't! So, on to the next section!
@@ -49,7 +50,7 @@ First of all, we need to install the tool that creates the VMs.
 
 And after that completes we can make our first VM!
 
-`xen-create-image --hostname Tux --ip 192.168.0.5 --vcpus 1 --pygrub --dist squeeze --dir ~/`
+`xen-create-image --hostname Tux --ip 192.168.0.5 --gateway 192.168.0.1 --netmask 255.255.255.0 --nameserver 192.168.0.1 --vcpus 1 --pygrub --dist squeeze --dir ~/`
 
 This will create a new VM in your home directory in a sub-directory called 'xen'.  It will default to 128 Megabytes of RAM if you don't provide that on the command line with the `--memory=` option, which by the way, takes a number such as '2Gb'.  Please note that '2GB' is not acceptable, nor is '2', as I found out through my own testing. You can also set the size of the disk image using the `--size=` option, and I would strongly encourage you to read the man page for xen-create-image to give yourself an idea of what is possible when you create the image.  It's possible to specify the root password, it's also possible to it to use a randomized password for root and display that to you after completing the xen-create-image command, set the VM to boot after creation, and a plethora of other cool options.
 
