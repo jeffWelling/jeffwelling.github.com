@@ -30,7 +30,6 @@ Well OK, there's a couple tricks. I found that in order to get Xen to boot by de
 			bridge_stp off
 			bridge_maxwait 0
 			bridge_fd 0
-	  #Please change the IP address and gateway to valid values before using.  
 
 * Edit /etc/xen/xend-config.sxp -- Do not uncomment any of the network scripts which look like this "(network-script network-bridge)" "(network-script 'network-bridge bridge=br0')" and "(network-script 'network-bridge netdev=eth0')".  Because we are running Debian and we setup the bridge manually by editing the `/etc/network/interfaces` file, we don't need the network-scripts.  This is one of the things that the documentation on the Xen wiki confused me, I was trying to get it to work with the network scripts which caused me all kinds of headaches.  
 * Verify that this file contains an un-commented-out line  
